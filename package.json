@@ -8,12 +8,12 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "test": "echo \"No tests specified\" && exit 0",
-    "postinstall": "npx tailwindcss init -p && npx tailwindcss@latest build -i ./src/styles/globals.css -o ./public/styles/tailwind.css --minify"
+    "test": "echo \"No tests specified\" && exit 0"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.6",
     "@hookform/resolvers": "^5.2.0",
+    "@tailwindcss/forms": "^0.5.10",
     "@tanstack/react-query": "^5.83.0",
     "@tanstack/react-query-devtools": "^5.83.0",
     "axios": "^1.11.0",

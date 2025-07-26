@@ -11,7 +11,7 @@ import { Eye, EyeOff, Mail, Lock, User, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { useAuthForms, withGuest } from '@/hooks/{api}/useAuth';
+import { useAuthForms, withGuest } from '@/hooks/api/useAuth';
 import { registerSchema, RegisterFormData } from '@/lib/validations/auth';
 
 function RegisterPage() {
