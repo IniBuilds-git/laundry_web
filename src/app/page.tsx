@@ -20,12 +20,6 @@ import {
 import { Button } from "@/components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
-// import FeaturesSection from "@/components/home/FeaturesSection";
-// import StatsSection from "@/components/home/StatsSection";
-// import TestimonialsSection from "@/components/home/TestimonialsSection";
-// import CTASection from "@/components/home/CTASection";
-// import Header from "@/components/layout/Header";
-// import Footer from "@/components/layout/Footer";
 
 export default function HomePage() {
   return (
@@ -50,41 +44,49 @@ function Header() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="glass sticky top-0 z-50 border-b border-white/20"
+      className="backdrop-blur-md bg-white/70 sticky top-0 z-50 border-b border-white/20"
     >
-      <div className="container-custom">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-6">
           <motion.div 
             className="flex items-center gap-3"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="w-12 h-12 bg-gradient-primary rounded-2xl shadow-glow flex items-center justify-center">
+            <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-purple-700 rounded-2xl shadow-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">LR</span>
             </div>
-            <span className="text-2xl font-extrabold text-gradient tracking-tight">
+            <span className="text-2xl font-extrabold bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent tracking-tight">
               LaundryRoom
             </span>
           </motion.div>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#services" className="nav-link">Services</Link>
-            <Link href="#about" className="nav-link">About</Link>
-            <Link href="#testimonials" className="nav-link">Reviews</Link>
-            <Link href="#contact" className="nav-link">Contact</Link>
+            <Link href="#services" className="text-gray-700 hover:text-purple-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-purple-600 after:transition-all after:duration-300 hover:after:w-full">
+              Services
+            </Link>
+            <Link href="#about" className="text-gray-700 hover:text-purple-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-purple-600 after:transition-all after:duration-300 hover:after:w-full">
+              About
+            </Link>
+            <Link href="#testimonials" className="text-gray-700 hover:text-purple-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-purple-600 after:transition-all after:duration-300 hover:after:w-full">
+              Reviews
+            </Link>
+            <Link href="#contact" className="text-gray-700 hover:text-purple-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-purple-600 after:transition-all after:duration-300 hover:after:w-full">
+              Contact
+            </Link>
           </nav>
           
           <div className="flex space-x-4">
             <Link href="/login">
               <Button
                 variant="outline"
-                className="btn-outline hidden sm:inline-flex"
+                className="hidden sm:inline-flex border-purple-300 text-purple-700 hover:bg-purple-50"
               >
                 Login
               </Button>
             </Link>
             <Link href="/register">
-              <Button className="btn-primary shadow-glow-hover">
+              <Button className="bg-purple-600 text-white hover:bg-purple-700 shadow-lg hover:shadow-xl">
                 Get Started
               </Button>
             </Link>
@@ -124,12 +126,12 @@ function HeroSection() {
     <section className="relative py-24 lg:py-32">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: '4s' }}></div>
       </div>
 
-      <div className="container-custom relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -137,7 +139,7 @@ function HeroSection() {
           className="text-center max-w-5xl mx-auto"
         >
           <motion.div variants={itemVariants} className="mb-6">
-            <Badge variant="info" className="mb-4 px-4 py-2 text-sm font-medium">
+            <Badge variant="info" className="mb-4 px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800">
               <Sparkles className="h-4 w-4 mr-2" />
               Professional Laundry Services in Lagos
             </Badge>
@@ -147,17 +149,17 @@ function HeroSection() {
             variants={itemVariants}
             className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-8"
           >
-            <span className="text-gradient block">
+            <span className="bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent block">
               Professional Laundry
             </span>
-            <span className="text-foreground block">
+            <span className="text-gray-900 block">
               Made Simple
             </span>
           </motion.h1>
           
           <motion.p 
             variants={itemVariants}
-            className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
+            className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed"
           >
             Experience hassle-free laundry at your fingertips. Schedule pickup, 
             track your order, and get your clothes delivered—clean, fresh, and perfectly pressed.
@@ -170,7 +172,7 @@ function HeroSection() {
             <Link href="/register">
               <Button
                 size="lg"
-                className="btn-primary px-8 py-4 text-lg font-semibold shadow-glow-hover group"
+                className="bg-purple-600 text-white hover:bg-purple-700 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl group transition-all duration-200"
               >
                 Book Service Now
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -180,7 +182,7 @@ function HeroSection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="btn-outline px-8 py-4 text-lg"
+                className="border-purple-300 text-purple-700 hover:bg-purple-50 px-8 py-4 text-lg"
               >
                 View Services
               </Button>
@@ -194,19 +196,19 @@ function HeroSection() {
           >
             <div className="flex items-center space-x-2">
               <CheckCircle2 className="h-5 w-5 text-green-600" />
-              <span className="text-sm text-muted-foreground">Free Pickup & Delivery</span>
+              <span className="text-sm text-gray-600">Free Pickup & Delivery</span>
             </div>
             <div className="flex items-center space-x-2">
               <Shield className="h-5 w-5 text-blue-600" />
-              <span className="text-sm text-muted-foreground">Insured Service</span>
+              <span className="text-sm text-gray-600">Insured Service</span>
             </div>
             <div className="flex items-center space-x-2">
               <Clock className="h-5 w-5 text-purple-600" />
-              <span className="text-sm text-muted-foreground">24/7 Tracking</span>
+              <span className="text-sm text-gray-600">24/7 Tracking</span>
             </div>
             <div className="flex items-center space-x-2">
               <Award className="h-5 w-5 text-orange-600" />
-              <span className="text-sm text-muted-foreground">Premium Quality</span>
+              <span className="text-sm text-gray-600">Premium Quality</span>
             </div>
           </motion.div>
         </motion.div>
@@ -226,7 +228,7 @@ function StatsSection() {
 
   return (
     <section className="py-16 bg-white/50 backdrop-blur-sm">
-      <div className="container-custom">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -244,13 +246,13 @@ function StatsSection() {
               whileHover={{ scale: 1.05 }}
               className="text-center group"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-primary rounded-2xl mb-4 group-hover:shadow-glow transition-all duration-300">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-600 to-purple-700 rounded-2xl mb-4 group-hover:shadow-lg transition-all duration-300">
                 <stat.icon className="h-8 w-8 text-white" />
               </div>
-              <div className="text-3xl lg:text-4xl font-bold text-gradient mb-2">
+              <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent mb-2">
                 {stat.number}
               </div>
-              <div className="text-muted-foreground font-medium">
+              <div className="text-gray-600 font-medium">
                 {stat.label}
               </div>
             </motion.div>
@@ -304,7 +306,7 @@ function FeaturesSection() {
 
   return (
     <section id="services" className="py-24">
-      <div className="container-custom">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -312,10 +314,10 @@ function FeaturesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gradient mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent mb-6">
             Why Choose LaundryRoom?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We provide premium laundry services with the convenience, quality, and care your clothes deserve.
           </p>
         </motion.div>
@@ -331,17 +333,17 @@ function FeaturesSection() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group"
             >
-              <Card className="card-glass card-hover h-full border-0 overflow-hidden">
+              <Card className="backdrop-blur-md bg-white/70 hover:shadow-xl h-full border-0 overflow-hidden transition-all duration-300">
                 <CardHeader className="text-center pb-4">
                   <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
                     {feature.icon}
                   </div>
-                  <CardTitle className="text-xl font-bold text-foreground mb-2">
+                  <CardTitle className="text-xl font-bold text-gray-900 mb-2">
                     {feature.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-center leading-relaxed">
+                  <p className="text-gray-600 text-center leading-relaxed">
                     {feature.description}
                   </p>
                 </CardContent>
@@ -383,7 +385,7 @@ function TestimonialsSection() {
 
   return (
     <section id="testimonials" className="py-24 bg-white/30 backdrop-blur-sm">
-      <div className="container-custom">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -391,10 +393,10 @@ function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gradient mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent mb-6">
             What Our Customers Say
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Don't just take our word for it. Here's what our happy customers have to say about our service.
           </p>
         </motion.div>
@@ -409,21 +411,21 @@ function TestimonialsSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
             >
-              <Card className="card-glass h-full border-0">
+              <Card className="backdrop-blur-md bg-white/70 h-full border-0">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-muted-foreground mb-6 leading-relaxed italic">
+                  <p className="text-gray-600 mb-6 leading-relaxed italic">
                     "{testimonial.comment}"
                   </p>
                   <div className="flex items-center">
                     <div className="text-4xl mr-4">{testimonial.avatar}</div>
                     <div>
-                      <div className="font-semibold text-foreground">{testimonial.name}</div>
-                      <div className="text-sm text-muted-foreground flex items-center">
+                      <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                      <div className="text-sm text-gray-600 flex items-center">
                         <MapPin className="h-4 w-4 mr-1" />
                         {testimonial.location}
                       </div>
@@ -443,8 +445,8 @@ function TestimonialsSection() {
 function CTASection() {
   return (
     <section className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-primary opacity-10"></div>
-      <div className="container-custom relative z-10">
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-700 opacity-10"></div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -452,10 +454,10 @@ function CTASection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gradient mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent mb-6">
             Ready to Experience the Best Laundry Service?
           </h2>
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             Join thousands of satisfied customers who trust LaundryRoom with their laundry needs. 
             Get started today and experience the difference!
           </p>
@@ -463,7 +465,7 @@ function CTASection() {
             <Link href="/register">
               <Button
                 size="lg"
-                className="btn-primary px-8 py-4 text-lg font-semibold shadow-glow-hover group"
+                className="bg-purple-600 text-white hover:bg-purple-700 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl group"
               >
                 Start Your First Order
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -473,14 +475,14 @@ function CTASection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="btn-outline px-8 py-4 text-lg"
+                className="border-purple-300 text-purple-700 hover:bg-purple-50 px-8 py-4 text-lg"
               >
                 <Phone className="mr-2 h-5 w-5" />
                 Call Us Now
               </Button>
             </Link>
           </div>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-gray-600">
             🎉 New customers get 20% off their first order!
           </p>
         </motion.div>
@@ -493,11 +495,11 @@ function CTASection() {
 function Footer() {
   return (
     <footer id="contact" className="bg-gray-900 text-white py-16">
-      <div className="container-custom">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-purple-700 rounded-xl flex items-center justify-center">
                 <span className="text-white font-bold">LR</span>
               </div>
               <span className="text-xl font-bold">LaundryRoom</span>
